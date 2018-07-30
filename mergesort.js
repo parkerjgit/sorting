@@ -29,3 +29,15 @@ function merge(array1, array2) {
   }
   return resultArr;
 }
+
+function mergeSort(array) {
+
+  if (array.length < 2) {
+    return array;
+  }
+
+  let left, right;
+  [left, right] = split(array);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
